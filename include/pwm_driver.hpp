@@ -58,11 +58,12 @@ namespace i2c_linux {
         
         struct bi_directional_motor : pwm_device {
             
-            int direction_channel;
+            int in1_channel, in2_channel;
             
-            bi_directional_motor(int channel, int direction_channel) : pwm_device(channel) {
+            bi_directional_motor(int channel, int in1_channel, int in2_channel) : pwm_device(channel) {
                 
-                this->direction_channel = direction_channel;
+                this->in1_channel = in1_channel;
+                this->in2_channel = in2_channel;
             }
             
         };
@@ -157,10 +158,12 @@ namespace i2c_linux {
             this->set_pwm(motor.channel, pulse_length, 0);
             
             if (speed_ratio >= 0) {
-                this->set_pwm(motor.direction_channel, 4096, 0);
+                this->set_pwm(motor.in1_channel, 4096, 0);
+                this->set_pwm(motor.in2_channel, 0, 4096);
             }
             else {
-                this->set_pwm(motor.direction_channel, 0, 4096);
+                this->set_pwm(motor.in1_channel, 0, 4096);
+                this->set_pwm(motor.in2_channel, 4096, 0);
             }
         }
         
