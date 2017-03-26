@@ -56,9 +56,15 @@ namespace i2c_linux {
             mutable int max_pw_ms = 600;
         };
         
-        struct motor : pwm_device {
+        struct bi_directonal_motor : pwm_device {
             
-            using pwm_device::pwm_device;
+            int direction_channel;
+            
+            bi_directional_motor(int channel = 0, direction_channel = channel + 1) : pwm_device(channel) {
+                
+                this->direction_channel = direction_channel;
+            }
+            
         };
         
         
@@ -138,8 +144,19 @@ namespace i2c_linux {
         }*/
         
         void set_ratio(const servo& s, double ratio) {
+            // ratio from 0 to 1
         
             this->set_pwm(s.channel, 0, ratio*(s.max_pw_ms-s.min_pw_ms) + s.min_pw_ms);
+        }
+        
+        void set_speed_ratio(const bi_directional_motor& motor, const double& speed_ratio) {
+            // speed_ratio from -1 to 1
+            
+            int pulse_length = 4096*std::abs(speed_ratio);
+            int direction = speed_ration ? speed_ratio >= 0 ? 1 : -1;
+            
+            this->set_pwm(motor.channel, pulse_length, 0);
+            this->set_pwm(motor.direction_channel, 4096, 0);
         }
         
     };
