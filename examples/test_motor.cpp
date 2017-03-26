@@ -10,7 +10,7 @@ int main() {
         
         for (double speed : {0, 0.5, 1, 0, -0.5, -1}) {
             
-            pwm_driver.set_speed_ratio(motor, speed);
+           // pwm_driver.set_speed_ratio(motor, speed);
         
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
