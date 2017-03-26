@@ -8,7 +8,7 @@ int main() {
     
     while (true) {
         
-        for (double speed : {0, 0.5, 1, 0, -0.5, -1}) {
+        for (double speed : {0.0, 0.5, 1.0, 0.0, -0.5, -1.0}) {
             
            // pwm_driver.set_speed_ratio(motor, speed);
         
