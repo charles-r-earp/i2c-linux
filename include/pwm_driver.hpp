@@ -42,7 +42,7 @@ namespace i2c_linux {
             
             int channel;
             
-            pwm_device(int channel = 0) {
+            pwm_device(int channel) {
             
                 this->channel = channel;
             }
@@ -60,7 +60,7 @@ namespace i2c_linux {
             
             int direction_channel;
             
-            bi_directional_motor(int channel = 0, int direction_channel = channel + 1) : pwm_device(channel) {
+            bi_directional_motor(int channel, int direction_channel) : pwm_device(channel) {
                 
                 this->direction_channel = direction_channel;
             }
