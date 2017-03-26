@@ -56,7 +56,7 @@ namespace i2c_linux {
             mutable int max_pw_ms = 600;
         };
         
-        struct bi_directonal_motor : pwm_device {
+        struct bi_directional_motor : pwm_device {
             
             //int direction_channel;
             
