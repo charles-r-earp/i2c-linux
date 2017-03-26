@@ -149,7 +149,7 @@ namespace i2c_linux {
             this->set_pwm(s.channel, 0, ratio*(s.max_pw_ms-s.min_pw_ms) + s.min_pw_ms);
         }
         
-        /*void set_speed_ratio(const bi_directional_motor& motor, const double& speed_ratio) {
+        void set_speed_ratio(const bi_directional_motor& motor, const double& speed_ratio) {
             // speed_ratio from -1 to 1
             
             int pulse_length = 4096*std::abs(speed_ratio);
@@ -162,7 +162,7 @@ namespace i2c_linux {
             else {
                 this->set_pwm(motor.direction_channel, 0, 4096);
             }
-        }*/
+        }
         
     };
 }
