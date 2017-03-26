@@ -58,12 +58,12 @@ namespace i2c_linux {
         
         struct bi_directonal_motor : pwm_device {
             
-            /*int direction_channel;
+            //int direction_channel;
             
             bi_directional_motor(int channel, int direction_channel) : pwm_device(channel) {
                 
-                this->direction_channel = direction_channel;
-            }*/
+             //   this->direction_channel = direction_channel;
+            }
             
         };
         
