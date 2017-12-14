@@ -1,9 +1,10 @@
 #ifndef I2C_LINUX_I2C_DEVICE_HPP
 #define I2C_LINUX_I2C_DEVICE_HPP
 
+#include "i2c-dev.h"
+#include "smbus.h"
+
 #include <cstddef> // define NULL
-#include <linux/i2c-dev.h>
-#include <i2c/smbus.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <cassert>
