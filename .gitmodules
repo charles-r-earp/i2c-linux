@@ -1,0 +1,3 @@
+[submodule "submodules/i2c-tools"]
+	path = submodules/i2c-tools
+	url = https://github.com/ev3dev/i2c-tools

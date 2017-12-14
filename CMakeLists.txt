@@ -9,8 +9,10 @@ if (CMAKE_VERSION VERSION_LESS "3.1")
     set (CMAKE_CXX_STANDARD 11)
 endif ()
 
+
+
 add_library(i2c-linux INTERFACE)
-target_include_directories(i2c-linux INTERFACE include)
+target_include_directories(i2c-linux INTERFACE include submodules/i2c-tools/include)
 
 add_executable(test_servo examples/test_servo.cpp)
 target_link_libraries(test_servo i2c-linux)
