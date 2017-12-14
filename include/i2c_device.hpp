@@ -3,6 +3,7 @@
 
 #include <cstddef> // define NULL
 #include <linux/i2c-dev.h>
+#include <i2c/smbus.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <cassert>
