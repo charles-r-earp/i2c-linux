@@ -22,8 +22,8 @@ target_include_directories(i2c-linux INTERFACE include submodules/i2c-tools/incl
 add_executable(test_servo examples/test_servo.cpp)
 target_link_libraries(test_servo i2c-linux)
 
-add_executable(test_motor examples/test_motor.cpp)
-target_link_libraries(test_motor i2c-linux)
+#add_executable(test_motor examples/test_motor.cpp)
+#target_link_libraries(test_motor i2c-linux)
 
 install(TARGETS i2c-linux LIBRARY DESTINATION lib)
 install(FILES include/i2c_device.hpp include/pwm_driver.hpp DESTINATION include/i2c-linux)
