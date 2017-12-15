@@ -2,7 +2,7 @@
 #define I2C_LINUX_PWM_DRIVER_HPP
 
 
-#include <i2c_device.hpp>
+#include "i2c_device.hpp"
 
 #include <cmath>
 #include <thread>
